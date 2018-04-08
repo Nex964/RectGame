@@ -73,24 +73,32 @@ public class Main implements Runnable {
             if (!pause) {
                 player.tick(delta);
                 camera.tick();
-                for (DialogueBlock aDialogueBlockList : dialogueBlockList)
+                for (int i = 0; i < dialogueBlockList.size(); i++) {
+                    DialogueBlock aDialogueBlockList = dialogueBlockList.get(i);
                     ((DialogueBlock) aDialogueBlockList).tick(delta);
-                for (EventBlock anEventBlockList : eventBlockList) {
+                }
+                for (int i = 0; i < eventBlockList.size(); i++) {
+                    EventBlock anEventBlockList = eventBlockList.get(i);
                     ((EventBlock) anEventBlockList).tick(delta);
                 }
-                for (Entity aMonsterList : monsterList) {
+                for (int i = 0; i < monsterList.size(); i++) {
+                    Entity aMonsterList = monsterList.get(i);
                     ((Entity) aMonsterList).tick(delta);
                 }
-                for (StaticObjects aStaticObjectList : staticObjectList) {
+                for (int i = 0; i < staticObjectList.size(); i++) {
+                    StaticObjects aStaticObjectList = staticObjectList.get(i);
                     ((StaticObjects) aStaticObjectList).tick(delta);
                 }
-                for (Platform aPlatList : platList) {
+                for (int i = 0; i < platList.size(); i++) {
+                    Platform aPlatList = platList.get(i);
                     ((Platform) aPlatList).tick(delta);
                 }
-                for (Bullets aBulletList : bulletList) {
+                for (int i = 0; i < bulletList.size(); i++) {
+                    Bullets aBulletList = bulletList.get(i);
                     ((Bullets) aBulletList).tick(delta);
                 }
-                for (PickUps aPickUpsList : pickUpsList) {
+                for (int i = 0; i < pickUpsList.size(); i++) {
+                    PickUps aPickUpsList = pickUpsList.get(i);
                     ((PickUps) aPickUpsList).tick(delta);
                 }
             }
