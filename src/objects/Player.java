@@ -62,6 +62,7 @@ public class Player extends Entity {
         //This loop should be called before collision(). Why? figure out on our own.
         for (int i = 0; i < game.getPlatform().size(); i++) {
             Platform temp = game.getPlatform().get(i);
+            System.out.println("Complete");
             if (this.intersects(temp) && temp.type == 2) {
                 game.setGameState(9);
             }

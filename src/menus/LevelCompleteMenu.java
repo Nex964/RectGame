@@ -21,8 +21,7 @@ public class LevelCompleteMenu
   public void render(Graphics g)
   {
     g.setColor(Color.RED);
-    g.setFont(Assets.game_over_font);
-    g.drawString("Level Complete", 150, 100);
+    g.drawImage(Assets.background[1],0, 0, 650, 450, null);
     g.drawImage(Assets.gui_retry, 100, 175, 100, 100, null);
     g.drawImage(Assets.gui_home, 300, 175, 100, 100, null);
     g.drawImage(Assets.gui_next, 500, 175, 100, 100, null);

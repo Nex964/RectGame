@@ -66,6 +66,7 @@ public class Assets
     
     background = new BufferedImage[3];
     background[0] = ImageLoader.loadImage("/textures/space_background.png");
+    background[1] = ImageLoader.loadImage("/textures/level_complete_bg.png");
     
     spikes_img = ImageLoader.loadImage("/textures/spikes.png");
     
