@@ -63,6 +63,10 @@ public class Entity extends Object {
         }
     }
 
+    /*
+    TODO Following comments in this code are of old COLLISION DETECTION
+    PLEASE DO NOT ADD EXTRA COMMENTS, FOR NOW
+     */
     protected void collision() {
         for (int i = 0; i < game.getPlatform().size(); i++) {
             Platform temp = (Platform) game.getPlatform().get(i);
@@ -71,7 +75,7 @@ public class Entity extends Object {
                     game.setGameState(9);
                 }
                 if (x + width > temp.x && x + width < temp.x + 10 && y + height > temp.y + 1) {
-                    x = temp.x - width;
+//                    x = temp.x - width;
                     velX = 0;
                     cant_go_left = true;
                 } else {

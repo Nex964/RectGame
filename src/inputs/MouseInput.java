@@ -8,6 +8,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.io.PrintStream;
+
+import menus.MainMenu;
 import objects.Player;
 import tools.TextBox;
 import world.LevelDesigner;
@@ -134,8 +136,9 @@ public class MouseInput
     {
       if ((y > 200) && (y < 280))
       {
-        game.getTransaction().setColor(1.0F, 1.0F, 1.0F, 1.0F);
-        game.setGameState(3);
+
+        MainMenu.animate = true;
+//        game.setGameState(3);
       }
       if ((y > 300) && (y < 380))
       {

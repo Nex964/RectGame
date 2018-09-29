@@ -21,6 +21,12 @@ public class MainMenu
     private int b = 0;
     private int temp = 0;
 
+    private Main game;
+
+    private int nextAnim = 0;
+
+    public static boolean animate = false;
+
     public MainMenu(Main game) {
         background = ImageLoader.loadImage("/textures/background.png");
         play_sheet = ImageLoader.loadImage("/textures/menuUi.png");
@@ -39,15 +45,18 @@ public class MainMenu
         editor_ui[3] = sp1.getSub(899, 0, 299, 80);
         editor_ui[4] = sp1.getSub(1201, 0, 301, 79);
         editor_ui[5] = sp1.getSub(1500, 0, 299, 80);
+
+        this.game = game;
     }
 
     public void render(Graphics g) {
-        g.drawImage(background, x, 0, 650, 450, null);
-        g.drawImage(background, x + 650, 0, 650, 450, null);
+        g.drawImage(background, nextAnim + x, 0, 650, 450, null);
+        g.drawImage(background, nextAnim + x - 650, 0, 650, 450, null);
+        g.drawImage(background, nextAnim + x + 650, 0, 650, 450, null);
 
-        g.drawImage(play_image, 165, 200, 320, 80, null);
+        g.drawImage(play_image, nextAnim + 165, 200, 320, 80, null);
 
-        g.drawImage(editor_image, 165, 300, 320, 80, null);
+        g.drawImage(editor_image, nextAnim + 165, 300, 320, 80, null);
     }
 
     public void tick() {
@@ -94,6 +103,16 @@ public class MainMenu
                 break;
             case 6:
                 b = 0;
+        }
+
+        if(animate == true){
+            nextAnim+= 20;
+        }
+        if(nextAnim >= 650){
+            game.setGameState(3);
+            game.getTransaction().setColor(1.0F, 1.0F, 1.0F, 1.0F);
+            animate = false;
+            nextAnim = 0;
         }
     }
 }

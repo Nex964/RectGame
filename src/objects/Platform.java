@@ -72,10 +72,10 @@ public class Platform extends Object {
                 for (int i = 0; i < game.getPlatform().size(); i++) {
                     Platform temp = game.getPlatform().get(i);
                     if (intersects(temp)) {
-                        if (x > x) {
+                        if (x > temp.x) {
                             move_hori_speed = 1;
                         }
-                        if (x < x) {
+                        if (x < temp.x) {
                             move_hori_speed = -1;
                         }
                     }
@@ -86,10 +86,10 @@ public class Platform extends Object {
                 for (int i = 0; i < game.getPlatform().size(); i++) {
                     Platform temp = game.getPlatform().get(i);
                     if (intersects(temp)) {
-                        if (y > y) {
+                        if (y > temp.y) {
                             move_vert_speed = 1;
                         }
-                        if (y < y) {
+                        if (y < temp.y) {
                             move_vert_speed = -1;
                         }
                     }
