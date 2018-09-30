@@ -1,10 +1,9 @@
 package objects;
 
-import Game.Main;
+import game.Main;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
 public class Entity extends Object {
     private static final long serialVersionUID = 1820218228092288762L;
@@ -52,12 +51,12 @@ public class Entity extends Object {
             isJumping = 1;
         }
         if ((cant_go_right) && (isJumping != 2)) {
-            velX = (-(velX + 10));
+//            velX = (-(velX + 10));
             velY = (-height);
             isJumping = 2;
         }
         if ((cant_go_left) && (isJumping != 3)) {
-            velX = (-(velX + 10));
+//            velX = (-(velX + 10));
             velY = (-height);
             isJumping = 3;
         }
@@ -75,7 +74,7 @@ public class Entity extends Object {
                     game.setGameState(9);
                 }
                 if (x + width > temp.x && x + width < temp.x + 10 && y + height > temp.y + 1) {
-//                    x = temp.x - width;
+                    x = temp.x - width;
                     velX = 0;
                     cant_go_left = true;
                 } else {

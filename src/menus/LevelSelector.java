@@ -1,13 +1,13 @@
 package menus;
 
-import Game.Main;
+import game.Main;
 import assets.ImageLoader;
 import assets.SpriteSheet;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.PrintStream;
+
 import tools.FileHandler;
 
 public class LevelSelector

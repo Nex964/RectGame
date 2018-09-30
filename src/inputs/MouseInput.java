@@ -1,16 +1,13 @@
 package inputs;
 
-import Game.Dailogs;
-import Game.Inventory;
-import Game.Main;
-import Game.Transaction;
+import game.Dailogs;
+import game.Inventory;
+import game.Main;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.IOException;
-import java.io.PrintStream;
 
 import menus.MainMenu;
-import objects.Player;
 import tools.TextBox;
 import world.LevelDesigner;
 import world.World;
@@ -116,6 +113,8 @@ public class MouseInput
                 LevelDesigner.TYPE = 12;
                 System.out.println("Key Pressed");
               }
+              Inventory.toggle();
+              return;
             }
           }
         }
@@ -143,7 +142,8 @@ public class MouseInput
       if ((y > 300) && (y < 380))
       {
         game.setGameState(4);
-        game.getLevelDesigner();LevelDesigner.FIRST_TIME = true;
+        game.getLevelDesigner();
+        LevelDesigner.FIRST_TIME = true;
       }
     }
     if (game.getGameState() == 3)

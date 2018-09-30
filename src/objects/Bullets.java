@@ -1,7 +1,6 @@
 package objects;
 
-import Game.Camera;
-import Game.Main;
+import game.Main;
 import java.awt.Graphics;
 
 public class Bullets

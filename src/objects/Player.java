@@ -1,13 +1,10 @@
 package objects;
 
-import Game.Camera;
-import Game.Main;
+import game.Main;
 import assets.Assets;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.io.PrintStream;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Player extends Entity {

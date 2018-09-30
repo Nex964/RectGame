@@ -1,14 +1,10 @@
 package world;
 
-import Game.Camera;
-import Game.Main;
-import display.Display;
-import java.awt.Canvas;
+import game.Main;
+
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Point;
-import java.io.PrintStream;
-import java.util.ArrayList;
+
 import objects.Bullets;
 import objects.DialogueBlock;
 import objects.Entity;

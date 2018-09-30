@@ -1,7 +1,6 @@
 package objects;
 
-import Game.Camera;
-import Game.Main;
+import game.Main;
 import java.awt.Color;
 import java.awt.Graphics;
 

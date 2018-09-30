@@ -3,6 +3,7 @@ package tools;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
+import java.awt.*;
 
 public class MessageBox
   extends JFrame
@@ -13,6 +14,7 @@ public class MessageBox
   {
     super(title);
     JTextArea message = new JTextArea(message_text);
+    message.setMargin(new Insets(10, 10, 10, 10));
     message.setEditable(false);
     message.setBorder(new TitledBorder(sub_title));
     add(message);

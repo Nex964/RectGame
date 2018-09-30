@@ -1,4 +1,4 @@
-import Game.Main;
+import game.Main;
 
 public class Launcher
 {

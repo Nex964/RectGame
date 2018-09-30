@@ -1,6 +1,6 @@
 package menus;
 
-import Game.Main;
+import game.Main;
 import assets.Assets;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -19,7 +19,7 @@ public class GameOver
   {
     g.setColor(Color.RED);
     g.setFont(Assets.game_over_font);
-    g.drawString("Game Over", 150, 100);
+    g.drawString("game Over", 150, 100);
     g.drawImage(Assets.gui_retry, 100, 175, 100, 100, null);
     g.drawImage(Assets.gui_home, 300, 175, 100, 100, null);
   }

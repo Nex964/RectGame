@@ -1,10 +1,10 @@
 package menus;
 
-import Game.Main;
+import game.Main;
 import assets.Assets;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.io.PrintStream;
+
 import tools.FileHandler;
 import world.World;
 

@@ -1,9 +1,6 @@
 package world;
 
-import Game.Camera;
-import Game.Main;
-import java.io.PrintStream;
-import java.util.ArrayList;
+import game.Main;
 import objects.Platform;
 
 public class WorldData

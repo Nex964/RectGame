@@ -1,11 +1,9 @@
 package objects;
 
-import Game.Camera;
-import Game.Main;
+import game.Main;
 import assets.Assets;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
 public class StaticObjects
   extends Object

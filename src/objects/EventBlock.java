@@ -1,11 +1,8 @@
 package objects;
 
-import Game.Camera;
-import Game.Dailogs;
-import Game.Main;
+import game.Dailogs;
+import game.Main;
 import java.awt.Graphics;
-import java.io.PrintStream;
-import java.util.ArrayList;
 
 public class EventBlock
   extends Object

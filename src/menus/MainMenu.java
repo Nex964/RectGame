@@ -1,6 +1,6 @@
 package menus;
 
-import Game.Main;
+import game.Main;
 import assets.ImageLoader;
 import assets.SpriteSheet;
 
