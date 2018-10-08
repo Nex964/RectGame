@@ -23,7 +23,10 @@ public class LevelSelector
     private int x = 0;
     private int completed_levels;
 
+    private Main game;
+
     public LevelSelector(Main game) {
+        this.game = game;
         init();
     }
 
