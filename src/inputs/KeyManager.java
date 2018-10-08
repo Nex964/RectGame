@@ -4,11 +4,16 @@ import game.Dailogs;
 import game.Inventory;
 import game.Main;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 
 import objects.Player;
+import tools.FileHandler;
 import tools.MessageBox;
+import tools.TextBox;
 import world.LevelDesigner;
 import world.World;
 
@@ -27,8 +32,8 @@ public class KeyManager
             new MessageBox("Developer Tips",
                     "Level Editor",
                     "You can press 'E' to see available Rects\n" +
-                            "Use Arrow Keys to Navigate while editing the world.\n" +
-                            "Press 'O' Key to save the Edited level\n" +
+                            "Use Left/Right Arrow Keys to Navigate while editing the world.\n" +
+                            "Press 'O' Key to save/upload the Edited level\n" +
                             "Press 'L' to load last saved level\n" +
                             "You can also press 'Up' Arrow Key to start testing while editing.\n" +
                             "But make sure to save the level before testing!!");
@@ -76,6 +81,7 @@ public class KeyManager
             }
             if (key == 79) {
                 game.getStoreWorld().storePlatData();
+                new TextBox(game.getLevelDesigner(), 1);
             }
             if (key == 76) {
                 game.reset();

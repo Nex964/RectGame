@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RectGame:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/RectGame_jar</output-path>
+    <root id="archive" name="RectGame.jar">
+      <element id="module-output" name="RectGame" />
+      <element id="library" level="module" name="res" module-name="RectGame" />
+    </root>
+  </artifact>
+</component>

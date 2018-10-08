@@ -12,6 +12,7 @@ import objects.EventBlock;
 import objects.Key;
 import objects.PickUps;
 import objects.Platform;
+import objects.SlimeBoss;
 import objects.SlimeMon;
 import objects.StaticObjects;
 
@@ -130,7 +131,7 @@ public class World
         }
         else
         {
-          datas = line.split("'");
+          datas = line.split("-");
           int[] data = new int[5];
           for (int i = 0; i < datas.length; i++) {
             if ((current_item.equals("event")) && (i == 2)) {

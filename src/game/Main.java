@@ -29,6 +29,8 @@ import world.StoreWorld;
 import world.World;
 
 public class Main implements Runnable {
+
+    public static final boolean DEBUG = false;
     public static int BLOCK_WIDTH = 64;
     public static int BLOCK_HEIGHT = 64;
     private boolean running = false;
@@ -353,5 +355,13 @@ public class Main implements Runnable {
 
     public Display getDisplay() {
         return display;
+    }
+
+    public Menu getMenu(String name){
+        switch (name.toLowerCase()){
+            case "main":
+                return menu;
+        }
+        return menu;
     }
 }

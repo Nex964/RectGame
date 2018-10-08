@@ -18,7 +18,7 @@ public class StoreWorld
   private File folder;
   private Main game;
   private String home_dir;
-  
+
   public StoreWorld(Main game)
   {
     this.game = game;
@@ -38,7 +38,7 @@ public class StoreWorld
       }
     }
   }
-  
+
   public void storePlatData()
   {
     try
@@ -46,10 +46,10 @@ public class StoreWorld
       writer = new BufferedWriter(new FileWriter(file));
       for (Platform platform : game.getPlatform())
       {
-        writer.write(platform.x + "'");
-        writer.write(platform.y + "'");
-        writer.write(platform.width + "'");
-        writer.write(platform.height + "'");
+        writer.write(platform.x + "-");
+        writer.write(platform.y + "-");
+        writer.write(platform.width + "-");
+        writer.write(platform.height + "-");
         System.out.println(platform.getType());
         System.out.println(platform.type);
         String temp = Integer.toString(platform.type);
@@ -63,9 +63,9 @@ public class StoreWorld
       }
       for (PickUps coins : game.getPickUpsList())
       {
-        writer.write(coins.x + "'");
-        writer.write(coins.y + "'");
-        writer.write(coins.width + "'");
+        writer.write(coins.x + "-");
+        writer.write(coins.y + "-");
+        writer.write(coins.width + "-");
         String temp = Integer.toString(coins.height);
         writer.write(temp);
         writer.newLine();
@@ -77,11 +77,11 @@ public class StoreWorld
       }
       for (Entity enemys : game.getMonsterList())
       {
-        writer.write(enemys.x + "'");
-        writer.write(enemys.y + "'");
-        writer.write(enemys.width + "'");
+        writer.write(enemys.x + "-");
+        writer.write(enemys.y + "-");
+        writer.write(enemys.width + "-");
         String temp = Integer.toString(enemys.height);
-        writer.write(temp + "'");
+        writer.write(temp + "-");
         temp = Integer.toString(enemys.type);
         writer.write(temp);
         writer.newLine();
@@ -93,17 +93,17 @@ public class StoreWorld
       }
       for (StaticObjects staticObjects : game.getStaticObjectList())
       {
-        writer.write(staticObjects.x + "'");
-        writer.write(staticObjects.y + "'");
-        writer.write(staticObjects.width + "'");
+        writer.write(staticObjects.x + "-");
+        writer.write(staticObjects.y + "-");
+        writer.write(staticObjects.width + "-");
         String temp = Integer.toString(staticObjects.height);
-        writer.write(temp + "'");
+        writer.write(temp + "-");
         temp = Integer.toString(staticObjects.getType());
         writer.write(temp);
         writer.newLine();
       }
       writer.close();
-      
+
       System.out.println("World Saved Succesfully");
     }
     catch (IOException e)
