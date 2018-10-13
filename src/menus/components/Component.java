@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 public abstract class Component {
 
     public int x, y, width, height;
+    public String name;
 
     protected BufferedImage image;
 
