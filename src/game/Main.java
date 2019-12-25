@@ -282,6 +282,8 @@ public class Main implements Runnable {
         bulletList.clear();
         dialogueBlockList.clear();
         eventBlockList.clear();
+        if(camera != null)
+            camera.setxOffset(0);
         Key.setCollectedPieces(0);
     }
 
@@ -361,6 +363,8 @@ public class Main implements Runnable {
         switch (name.toLowerCase()){
             case "main":
                 return menu;
+            case "level":
+                return level;
         }
         return menu;
     }

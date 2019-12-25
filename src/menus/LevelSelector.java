@@ -1,5 +1,6 @@
 package menus;
 
+import assets.Assets;
 import game.Main;
 import assets.ImageLoader;
 import assets.SpriteSheet;
@@ -17,7 +18,7 @@ import tools.FileHandler;
 public class LevelSelector
         extends Menu {
 
-    private int level = 2;
+    private static final int LEVELS = 3;
     private BufferedImage image;
     private int x = 0;
     private int completed_levels;
@@ -33,6 +34,13 @@ public class LevelSelector
         image = ImageLoader.loadImage("/textures/select_level_banner.png");
 
         getComponentList().add(new Button("select_level_banner",131, 7, 389, 60, image));
+        BufferedImage image = ImageLoader.loadImage("/textures/levels.png");
+        SpriteSheet spriteSheet = new SpriteSheet(image);
+
+        //! Static loop for built in levels
+        for(int i = 0; i < LEVELS; i++){
+            buttonList.add(new Button("level_" + (i + 1), i * 100 + 20, 100, 100, 100, spriteSheet.getSub(i * 100, 0, 100, 100)));
+        }
 
         String temp = FileHandler.read("options.txt").replaceAll("\n", " ");
         String[] data = temp.split(" ");
@@ -43,6 +51,8 @@ public class LevelSelector
                 setCompleted_levels(Integer.parseInt(data[(i + 1)]));
             }
         }
+
+
     }
 
     public void render(Graphics g) {

@@ -15,8 +15,8 @@ public class MainMenu
 
     private BufferedImage background[];
     private BufferedImage title_banner[];
-    private BufferedImage play_image;
-    private BufferedImage editor_image;
+    private BufferedImage play_image[];
+    private BufferedImage editor_image[];
 
     private Main game;
 
@@ -28,8 +28,19 @@ public class MainMenu
         background[0] = ImageLoader.loadImage("/textures/background.png").getSubimage(0, 0, 650, 450);
         background[1] = ImageLoader.loadImage("/textures/background_1.png").getSubimage(0, 0, 650, 450);
         background[2] = ImageLoader.loadImage("/textures/background_2.png").getSubimage(0, 0, 650, 450);
-        play_image = ImageLoader.loadImage("/textures/play.png");
-        editor_image = ImageLoader.loadImage("/textures/online.png");
+        play_image = new BufferedImage[3];
+        play_image[0] = ImageLoader.loadImage("/textures/menuUi.png").getSubimage(0, 0, 300, 80);
+        play_image[1] = ImageLoader.loadImage("/textures/menuUi.png").getSubimage(300, 0, 300, 80);
+        play_image[2] = ImageLoader.loadImage("/textures/menuUi.png").getSubimage(600, 0, 300, 80);
+
+        editor_image = new BufferedImage[6];
+        editor_image[0] = ImageLoader.loadImage("/textures/editorUi.png").getSubimage(0, 0, 300, 80);
+        editor_image[1] = ImageLoader.loadImage("/textures/editorUi.png").getSubimage(300, 0, 300, 80);
+        editor_image[2] = ImageLoader.loadImage("/textures/editorUi.png").getSubimage(600, 0, 300, 80);
+        editor_image[3] = ImageLoader.loadImage("/textures/editorUi.png").getSubimage(900, 0, 300, 80);
+        editor_image[4] = ImageLoader.loadImage("/textures/editorUi.png").getSubimage(1200, 0, 300, 80);
+        editor_image[5] = ImageLoader.loadImage("/textures/editorUi.png").getSubimage(1500, 0, 300, 80);
+
         title_banner = new BufferedImage[3];
         title_banner[0] = ImageLoader.loadImage("/textures/title_banner.png");
         title_banner[1] = ImageLoader.loadImage("/textures/title_banner_1.png");

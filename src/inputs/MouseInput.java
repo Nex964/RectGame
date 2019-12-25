@@ -7,7 +7,7 @@ import game.Main;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import menus.components.Button;
+import menus.components.*;
 import tools.TextBox;
 import world.LevelDesigner;
 import world.World;
@@ -133,7 +133,7 @@ public class MouseInput
                     b = (Button) o;
                 else
                     continue;
-                if(x > b.x && y > b.y && x < b.x + b.width && y < b.y + b.height){
+                if(x > b.getX() && y > b.getY() && x < b.getX() + b.getWidth() && y < b.getY() + b.getHeight()){
                     if(b.getName().equals("play")){
                          game.setGameState(3);
                     }
@@ -146,24 +146,41 @@ public class MouseInput
             }
         }
         if (game.getGameState() == 3) {
-            if ((x > 30) && (y > 50) && (x < 90) && (y < 110)) {
-                game.getTransaction().setColor(1.0F, 1.0F, 1.0F, 1.0F);
-                World.LEVEL = 1;
-                world.selectLevel();
-                game.setGameState(0);
+//            if ((x > 30) && (y > 50) && (x < 90) && (y < 110)) {
+//                game.getTransaction().setColor(1.0F, 1.0F, 1.0F, 1.0F);
+//                World.LEVEL = 1;
+//                world.selectLevel();
+//                game.setGameState(0);
+//            }
+//            if ((x > 130) && (y > 80) && (x < 180) && (y < 130)) {
+//                game.getTransaction().setColor(1.0F, 1.0F, 1.0F, 1.0F);
+//                World.LEVEL = 2;
+//                world.selectLevel();
+//                game.setGameState(0);
+//            }
+//            if ((x > 40) && (y > 150) && (x < 120) && (y < 230)) {
+//                game.getTransaction().setColor(1.0F, 1.0F, 1.0F, 1.0F);
+//                World.LEVEL = 3;
+//                world.selectLevel();
+//                game.setGameState(0);
+//            }
+            for(int i = 0; i < game.getMenu("level").getComponentList().size(); i++){
+                Object o = game.getMenu("level").getComponentList().get(i);
+                Button b = null;
+                if(o instanceof Button)
+                    b = (Button) o;
+                else
+                    continue;
+                if(x > b.getX() && y > b.getY() && x < b.getX() + b.getWidth() && y < b.getY() + b.getHeight()){
+                    if(b.getName().split("_")[0].equals("level")){
+                        game.getTransaction().setColor(1.0F, 1.0F, 1.0F, 1.0F);
+                        World.LEVEL = Integer.parseInt(b.getName().split("_")[1]);
+                        world.selectLevel();
+                        game.setGameState(0);
+                    }
+                }
             }
-            if ((x > 130) && (y > 80) && (x < 180) && (y < 130)) {
-                game.getTransaction().setColor(1.0F, 1.0F, 1.0F, 1.0F);
-                World.LEVEL = 2;
-                world.selectLevel();
-                game.setGameState(0);
-            }
-            if ((x > 40) && (y > 150) && (x < 120) && (y < 230)) {
-                game.getTransaction().setColor(1.0F, 1.0F, 1.0F, 1.0F);
-                World.LEVEL = 3;
-                world.selectLevel();
-                game.setGameState(0);
-            }
+
         }
         if (game.getGameState() == 1) {
             if ((x > 100) && (x < 200) && (y > 175) && (y < 275)) {

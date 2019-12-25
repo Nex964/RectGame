@@ -95,6 +95,10 @@ public class KeyManager
             if (key == 91) {
                 Main.BLOCK_WIDTH /= 2;
                 Main.BLOCK_HEIGHT /= 2;
+                if(Main.BLOCK_WIDTH < 16){
+                    Main.BLOCK_WIDTH = 16;
+                    Main.BLOCK_HEIGHT = 16;
+                }
             }
             if (key == 71) {
                 if (game.getLevelDesigner().isDrawingGrid()) {
